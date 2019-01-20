@@ -85,7 +85,7 @@ if DEBUG:   # Running on the development environment
             'USER': 'bbc',
             'PASSWORD': 'bbc',
             'HOST': 'localhost',
-            'PORT': '5000',
+            'PORT': '',
             
             }
         }

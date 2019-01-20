@@ -28,7 +28,7 @@ DEBUG = True
 if 'DYNO' in os.environ:    # Running on Heroku
     DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [".herokuapp.com", ".researchthroughdesign.org"]
 
 
 # Application definition

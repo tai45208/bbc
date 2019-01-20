@@ -1,0 +1,38 @@
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width:100%
+}
+p{
+		font-size: 3em;
+}
+h1,h2{
+		text-align:center;
+		font-weight:bold;
+}
+h1{
+		font-size: 5em;
+}
+h2{
+	  font-size: 3em;
+	  color: red;	
+}
+body {
+  padding: 20px;
+  background: url("/static/main/img/background.jpeg") fixed;
+  background-repeat: repeat;
+}
+ul#menu {
+		padding: 10em 0em 10em 3em;
+}
+img{
+		margin:100px;
+		}
+div#content{
+    text-align:  center;		
+}
+ul#menu1{
+		color:#FF0010;
+		text-align:  center;  
+}

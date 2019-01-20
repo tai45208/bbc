@@ -18,7 +18,10 @@ from django.urls import path, include, re_path
 from main import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('main/', include('main.urls', namespace='main')),
-    re_path('.*', views.main),
-]
+     path('admin/', admin.site.urls),
+     path('order/', include('order.urls', namespace='order')), 
+     path('main/',include('main.urls', namespace='main')),
+     path('', views.main, name='main'),
+     re_path('.*', views.main),   
+     path('about/', views.about, name='about'), 
+    ]

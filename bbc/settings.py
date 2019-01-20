@@ -25,6 +25,9 @@ SECRET_KEY = '#md=em#q7*3(vc+s^8()i56*w=yg#eiq42%6*wy7ufjj88ttlo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if 'DYNO' in os.environ:    # Running on Heroku
+    DEBUG = False
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'order',
     'main',
 ]
 
@@ -73,18 +77,25 @@ WSGI_APPLICATION = 'bbc.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+if DEBUG:   # Running on the development environment
+        DATABASES = {
+        'default': { 
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'bbcdb',
+            'USER': 'bbc',
+            'PASSWORD': 'bbc',
+            'HOST': 'localhost',
+            'PORT': '',
+            
+            }
+        }
+else:   # Running on Heroku
+    # Parse database configuration from $DATABASE_URL
+    import dj_database_url
+    DATABASES = {'default':dj_database_url.config()}
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-DATABASES = {
-    'default': { 
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bbcdb',
-        'USER': 'bbc',
-        'PASSWORD': 'bbc',
-        'HOST': 'localhost',
-        'PORT': '',
-        
-    }
-}
 
 
 # Password validation
@@ -124,3 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# For Heroku deployment
+STATIC_ROOT = 'staticfiles'
+

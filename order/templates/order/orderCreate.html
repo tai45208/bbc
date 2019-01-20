@@ -1,0 +1,17 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>BBC</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{% static 'main/css/order.css' %}">
+</head>
+<a href="{% url 'main:main' %}">回首頁</a>
+<body>
+<form method="post" action="{% url 'order:orderCreate' %}">
+  {% csrf_token %}
+  {{ orderForm.as_p }}
+  <input type="submit" value="送出">
+</form>
+</body>
+</html>

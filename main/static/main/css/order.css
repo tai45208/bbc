@@ -1,0 +1,38 @@
+body {
+  padding: 20px;
+  background: url("/static/main/img/background.jpeg") fixed;
+  background-repeat: repeat;
+}
+ul#menu1{
+		padding:0em 15em;
+    color:#FF0010;  
+    text-align:center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+img{
+    margin:100px;
+    }
+select {
+            text-align: center;
+            height: 30px;
+            overflow: hidden;
+            border: none;
+            outline: none;
+            background: #eee;
+            border-radius: 10px;     
+        }
+        /* Button */
+.btn {
+  display: inline-block;
+  color: black;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border: thin solid gray;
+  background: linear-gradient(#f7f7f7, #dedede);
+}
+input[type=text] {
+  padding: 0.4em;
+}

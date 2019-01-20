@@ -1,0 +1,22 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+<head>
+<title>BBC炸雞</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  <h1>BBC</h1>
+  <h2>The best fried chicken in the Hell.</h2>
+ <div id="content">
+<img src="/static/main/img/bbcking.png"width="1000" height="1000">
+<ul id="menu">
+ <a href="{% url 'main:about' %}"><img src="/static/main/img/menu.jpg" width="300" height="300"></a>
+ <a href="{% url 'order:orderCreate' %}"><img src="/static/main/img/take.png" width="300" height="300"></a>
+ <p>菜單&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;訂餐</p>>
+ </ul>
+  </div>
+</head>
+<body>
+
+</body>
+</html>
